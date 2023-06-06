@@ -17,3 +17,8 @@ spec:
       name: nginx-container
   
 ```
+
+- If you want to replace a pod or recreate it but its already running, instead of deleteing and creating pod again, do it with one command - 
+`k replace --force -f nginx.yaml`
+
+- If container status is containerCreating add --watch flag to watch on status of pod - `k get pods --watch`
