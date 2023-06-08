@@ -1,2 +1,5 @@
-# CKA-prep
-This repo contains my learning about K8s for CKA exam
+# CKA - (Certified Kubernetes Administrator)
+
+### Commands to save time - 
+
+- [Kubectl Cheatsheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
