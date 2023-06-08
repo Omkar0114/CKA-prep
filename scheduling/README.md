@@ -54,3 +54,6 @@ spec:
         tier: front-end
   
 ```
+
+# Taints & Tolerations
+- Taints are set on _nodes_ and tolerations are set on _pods_
