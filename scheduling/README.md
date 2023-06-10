@@ -57,3 +57,38 @@ spec:
 
 # Taints & Tolerations
 - Taints are set on _nodes_ and tolerations are set on _pods_
+
+
+# Node Selectors and node Affinity
+- condition - If there are multiple nodes of different configuration and resource limits such as in size large or small and also we have different kind of Pods also have different size w.r.t. specifications then we make sure that large pods should run on the Large nodes. That's why we have node selectors and node affinity. 
+- Node selectors are for the labeling the nodes with the value with key-pair value.
+- `kubectl label --help ` - you get all info about label command 
+### e.g- Apply a label on a node name node01
+- `kubeclt label node node01 color=blue` - color=blue is the label 
+- `kubectl get nodes --show-labels` - to show all labels on all nodes
+
+Now we applied a label on node. now we have to design apod-defination.yaml file to assign such pods to perticular nodes.
+
+- there is a property call affinity- nodeaffinity.
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: color
+            operator: In
+            values:
+            - blue            
+  containers:
+  - name: nginx
+    image: nginx
+    imagePullPolicy: IfNotPresent
+```
+
