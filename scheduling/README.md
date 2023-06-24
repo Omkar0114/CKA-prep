@@ -112,3 +112,4 @@ apiVersion: v1
       image: registry.k8s.io/pause:2.0
   
 ```
+- learn more at - https://kubernetes.io/docs/tasks/extend-kubernetes/configure-multiple-schedulers/
