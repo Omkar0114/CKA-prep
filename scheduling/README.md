@@ -92,3 +92,23 @@ spec:
     imagePullPolicy: IfNotPresent
 ```
 
+# Custom scheduler for PODs
+- You can define your own custom scheduler and deploy it as a pod in the k8s cluster.
+- The default scheduler is configured in the `kube-system` namespace. You can check it using - `kubectl get pods --namespace=kube-system`
+- you can describe and view image of scheduler using `k describe pod podname --namespace=kube-system`
+
+### Sepcify which pod schedules by which scheduler using yaml file - 
+```
+apiVersion: v1
+  kind: Pod
+  metadata:
+    name: annotation-default-scheduler
+    labels:
+      name: multischeduler-example
+  spec:
+    schedulerName: default-scheduler    // this line denotes the scheduler name for pod
+    containers:
+    - name: pod-with-default-annotation-container
+      image: registry.k8s.io/pause:2.0
+  
+```
