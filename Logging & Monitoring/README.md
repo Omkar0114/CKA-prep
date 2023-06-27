@@ -1,5 +1,9 @@
 # Monitoring Solution for Kubernetes
 
+#### Resources - 
+- https://www.datadoghq.com/blog/monitoring-kubernetes-era/
+- https://github.com/kubernetes-sigs/metrics-server
+
 - k8s does not have the inbuilt monitoring solution. There are many open-source tools such as Prometheus, Datadog, etc. for monitoring metrics for the k8s cluster and its components.
 
 - In Kubernetes, metrics and events are important components that provide information about the state and behavior of the cluster, applications, and resources. Let's explore each of them in more detail:
