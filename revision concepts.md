@@ -1,5 +1,5 @@
 - [ ] - taints and tolerations
-- [ ] -
+- [ ] - Pv and PVC
 - [ ] -
 - [ ] -
 - [ ] -
